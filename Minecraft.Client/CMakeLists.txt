@@ -1,10 +1,5 @@
 include("${CMAKE_CURRENT_LIST_DIR}/cmake/sources/Common.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/cmake/sources/Durango.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/cmake/sources/ORBIS.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/cmake/sources/PS3.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/cmake/sources/PSVita.cmake")
 include("${CMAKE_CURRENT_LIST_DIR}/cmake/sources/Windows.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/cmake/sources/Xbox360.cmake")
 
 include("${CMAKE_SOURCE_DIR}/cmake/CommonSources.cmake")
 
@@ -14,12 +9,7 @@ include("${CMAKE_SOURCE_DIR}/cmake/Utils.cmake")
 # We cant use CMAKE_CONFIGURE_PRESET here as VS doesn't set it, so just rely on the folder
 set(MINECRAFT_CLIENT_SOURCES
   ${MINECRAFT_CLIENT_COMMON}
-  $<$<STREQUAL:${PLATFORM_NAME},Durango>:${MINECRAFT_CLIENT_DURANGO}>
-  $<$<STREQUAL:${PLATFORM_NAME},Orbis>:${MINECRAFT_CLIENT_ORBIS}>
-  $<$<STREQUAL:${PLATFORM_NAME},PS3>:${MINECRAFT_CLIENT_PS3}>
-  $<$<STREQUAL:${PLATFORM_NAME},PSVita>:${MINECRAFT_CLIENT_PSVITA}>
   $<$<STREQUAL:${PLATFORM_NAME},Windows64>:${MINECRAFT_CLIENT_WINDOWS}>
-  $<$<STREQUAL:${PLATFORM_NAME},Xbox>:${MINECRAFT_CLIENT_XBOX360}>
   ${SOURCES_COMMON}
 )
 
